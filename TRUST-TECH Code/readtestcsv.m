@@ -1,0 +1,11 @@
+dataTable = readtable('TSLA_Test.csv', 'Format', '%q%f%f%f%f%f%f')
+dataTable.Properties.VariableNames = {'Date', 'Open', 'High','Low','Close','Adj','Volume'};
+dataTable(:,'Date') = [];
+dataTable(:,'Volume') = [];
+T=dataTable.Variables;
+open_price=T(1:331,1);
+high_price=T(1:331,2);
+low_price=T(1:331,3);
+close_price=T(1:331,4);
+real_open=T(2:332,1);
+all_price=T(1:331,1:4);
